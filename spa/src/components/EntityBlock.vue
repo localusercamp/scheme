@@ -1,5 +1,5 @@
 <template>
-  <g class="clickable" :transform="'translate('+x+', '+y+')'">
+  <g @click="click()" class="clickable" :transform="'translate('+x+', '+y+')'">
     <rect rx="5" ry="5" :width="rectWidth" height="60" fill="transparent" :stroke="stroke"></rect>
     <text ref="text" :x="spacing-2.5" y="42" class="block-text" font-size="35">
       <slot/>
@@ -35,6 +35,12 @@ export default {
     rectWidth() {
       return this.init ? this.rectShape.width : 0;
     },
+  },
+
+  methods: {
+    click() {
+      this.$emit('clicked');
+    }
   },
 
   mounted() {
