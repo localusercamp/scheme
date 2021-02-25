@@ -1,8 +1,4 @@
-# spa
-
-> A Vue.js project
-
-## Build Setup
+# Пояснительный проект к архитектуре
 
 ``` bash
 # install dependencies
