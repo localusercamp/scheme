@@ -6,15 +6,15 @@
           <svg :width="1400" :height="1000" viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg" stroke="red" fill="grey">
 
             <g transform="translate(0,100)">
-              <EntityBlock @clicked="setTab(tabs.FormRequest)" :x="100" :y="100" :shape.sync="FormRequest" stroke="red">FormRequest</EntityBlock>
-              <EntityBlock @clicked="setTab(tabs.Controller)" :x="400" :y="100" :shape.sync="Controller" stroke="green">Controller</EntityBlock>
-              <EntityBlock @clicked="setTab(tabs.Action)" :x="650" :y="100" :shape.sync="Action" stroke="blue">Action</EntityBlock>
-              <EntityBlock @clicked="setTab(tabs.Task)" :x="940" :y="100" :shape.sync="Task" stroke="purple">Task</EntityBlock>
-              <EntityBlock @clicked="setTab(tabs.Model)" :x="1100" :y="100" :shape.sync="Model" stroke="red">Model</EntityBlock>
-              <EntityBlock @clicked="setTab(tabs.Entity)" :x="1030" :y="200" :shape.sync="Entity" stroke="navy">Entity</EntityBlock>
+              <EntityBlock @clicked="setTab(tabs.FormRequest)" :x="100" :y="100" :shape.sync="FormRequest" stroke="crimson">FormRequest</EntityBlock>
+              <EntityBlock @clicked="setTab(tabs.Controller)" :x="400" :y="100" :shape.sync="Controller" stroke="darkseagreen">Controller</EntityBlock>
+              <EntityBlock @clicked="setTab(tabs.Action)" :x="650" :y="100" :shape.sync="Action" stroke="cornflowerblue">Action</EntityBlock>
+              <EntityBlock @clicked="setTab(tabs.Task)" :x="940" :y="100" :shape.sync="Task" stroke="mediumpurple">Task</EntityBlock>
+              <EntityBlock @clicked="setTab(tabs.Model)" :x="1100" :y="100" :shape.sync="Model" stroke="tomato">Model</EntityBlock>
+              <EntityBlock @clicked="setTab(tabs.Entity)" :x="1030" :y="200" :shape.sync="Entity" stroke="slateblue">Entity</EntityBlock>
               <EntityBlock @clicked="setTab(tabs.Exception)" :x="1000" :y="300" :shape.sync="Exception" stroke="orange">Exception</EntityBlock>
-              <EntityBlock @clicked="setTab(tabs.Helpers)" :x="1020" :y="400" :shape.sync="Helpers" stroke="cyan">Helpers</EntityBlock>
-              <EntityBlock @clicked="setTab(tabs.Collection)" :x="1000" :y="500" :shape.sync="Collection" stroke="magenta">Collection</EntityBlock>
+              <EntityBlock @clicked="setTab(tabs.Helpers)" :x="1020" :y="400" :shape.sync="Helpers" stroke="skyblue">Helpers</EntityBlock>
+              <EntityBlock @clicked="setTab(tabs.Collection)" :x="1000" :y="500" :shape.sync="Collection" stroke="orchid">Collection</EntityBlock>
 
               <g v-if="computed">
                 <Arrow :x1="100 + FormRequest.width" :y1="130" :x2="FormRequest.width + 138" :y2="130"/>

@@ -1,6 +1,6 @@
 <template>
-  <g @click="click()" class="clickable" :transform="'translate('+x+', '+y+')'">
-    <rect rx="5" ry="5" :width="rectWidth" height="60" fill="transparent" :stroke="stroke"></rect>
+  <g @click="click()" @mouseover="hover" @mouseleave="leave" class="entity-block clickable" :transform="'translate('+x+', '+y+')'">
+    <rect rx="5" ry="5" :width="rectWidth" height="60" :fill="fill" :stroke="stroke"></rect>
     <text ref="text" :x="spacing-2.5" y="42" class="block-text" font-size="35">
       <slot/>
     </text>
@@ -22,6 +22,7 @@ export default {
     return {
       init: false,
       spacing: 15,
+      hovering: false,
     }
   },
 
@@ -35,12 +36,21 @@ export default {
     rectWidth() {
       return this.init ? this.rectShape.width : 0;
     },
+    fill() {
+      return this.hovering ? this.stroke : 'transparent';
+    }
   },
 
   methods: {
     click() {
       this.$emit('clicked');
-    }
+    },
+    hover() {
+      this.hovering = true;
+    },
+    leave() {
+      this.hovering = false;
+    },
   },
 
   mounted() {
@@ -48,3 +58,12 @@ export default {
   }
 }
 </script>
+
+<style>
+  .entity-block:hover > rect {
+    transition: fill .2s ease-in-out;
+  }
+  .entity-block > rect {
+    transition: fill .2s ease-in-out;
+  }
+</style>
